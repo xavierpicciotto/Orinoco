@@ -1,0 +1,84 @@
+nav {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.404);
+    box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2em;
+    
+    .drop-menu {
+        color: $text-theme;
+        margin-left: 5%;
+        border: 1px solid white;
+        padding: 0.4%;
+        border-radius: 10px;
+    }
+    .drop-menu-items {
+        display: none;
+        color: white;
+        position: absolute;
+        top:160px;
+        background-color: rgba(156, 151, 151, 0.404);
+    }
+    .shop-cart {
+        color: #94ffb0;
+        margin: 5%;
+    }
+
+
+}
+.drop-menu:hover .drop-menu-items {
+    display: block;
+}
+
+
+
+.mainPage--section {
+    text-align: center;
+
+    h2 {
+        color: white;
+        font-size: 3.2em;
+        margin-top: 5%;
+        font-family: 'Dancing Script', cursive;
+    }
+}
+
+.list {
+    width: auto;
+    margin: auto;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $text-theme;
+        margin-bottom: 5%;
+        font-size: 1.5em;
+    }
+
+    img {
+        max-width: 95%;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    .labels {
+        width: 95%;
+        background-color: rgba(0, 0, 0, 0.404);
+        border-radius: 10px;
+        p { 
+            margin-top: 1%;
+            margin-bottom: 2%;
+            margin-left: 6%;
+            margin-right: 6%;
+        }
+
+    }
+}
