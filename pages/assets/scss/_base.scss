@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    flex-direction: column;
+    background: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+}
+header {
+    text-align: center;
+    h1 {
+        font-size: 4em;
+        margin: 1%;
+        font-family: 'Mansalva', cursive;
+    }
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+    &:hover{
+        cursor: pointer;
+    }
+}
+a{
+    color: inherit;
+    text-decoration: inherit;
+    width: inherit;
+}
