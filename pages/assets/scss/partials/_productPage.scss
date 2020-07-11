@@ -1,0 +1,42 @@
+.productPage--section {
+    h1 {
+        text-align: center;
+        font-size: 3.5em;
+        text-shadow: 3px 3px 3px rgb(114, 114, 114);
+    }
+    .product_presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .product_presentation_infos {
+        text-align: center;
+
+    }
+
+    img {
+        max-width: 75%;
+        box-shadow: 3px 3px 3px gray;
+    }
+
+    .product-name {
+        font-size: 2.2em;
+        border-bottom: 5px double white ;
+    }
+
+    .product-description {
+        text-align: justify;
+        margin: 5%;
+        font-size: 1.7em;
+    }
+
+    .infos_price {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 3em;
+        border-top:5px double white ;      
+    }
+
+}
