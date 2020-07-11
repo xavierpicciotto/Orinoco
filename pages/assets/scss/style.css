@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4em;
+  margin: 1%;
+  font-family: 'Mansalva', cursive;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  width: inherit;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.404);
+  -webkit-box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
+          box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 2em;
+}
+
+nav .drop-menu {
+  color: white;
+  margin-left: 5%;
+  border: 1px solid white;
+  padding: 0.4%;
+  border-radius: 10px;
+}
+
+nav .drop-menu-items {
+  display: none;
+  color: white;
+  position: absolute;
+  top: 160px;
+  background-color: rgba(156, 151, 151, 0.404);
+}
+
+nav .shop-cart {
+  color: #94ffb0;
+  margin: 5%;
+}
+
+.drop-menu:hover .drop-menu-items {
+  display: block;
+}
+
+.mainPage--section {
+  text-align: center;
+}
+
+.mainPage--section h2 {
+  color: white;
+  font-size: 3.2em;
+  margin-top: 5%;
+  font-family: 'Dancing Script', cursive;
+}
+
+.list {
+  width: auto;
+  margin: auto;
+}
+
+.list div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  margin-bottom: 5%;
+  font-size: 1.5em;
+}
+
+.list img {
+  max-width: 95%;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
+}
+
+.list img:hover {
+  opacity: 0.9;
+}
+
+.list .labels {
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.404);
+  border-radius: 10px;
+}
+
+.list .labels p {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.productPage--section h1 {
+  text-align: center;
+  font-size: 3.5em;
+  text-shadow: 3px 3px 3px #727272;
+}
+
+.productPage--section .product_presentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productPage--section .product_presentation_infos {
+  text-align: center;
+}
+
+.productPage--section img {
+  max-width: 75%;
+  -webkit-box-shadow: 3px 3px 3px gray;
+          box-shadow: 3px 3px 3px gray;
+}
+
+.productPage--section .product-name {
+  font-size: 2.2em;
+  border-bottom: 5px double white;
+}
+
+.productPage--section .product-description {
+  text-align: justify;
+  margin: 5%;
+  font-size: 1.7em;
+}
+
+.productPage--section .infos_price {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 3em;
+  border-top: 5px double white;
+}
+
+.formulaire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/*# sourceMappingURL=style.css.map */
