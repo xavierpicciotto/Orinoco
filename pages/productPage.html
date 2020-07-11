@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./assets/scss/style.css">
+    <script async src="https://kit.fontawesome.com/78ed5cda51.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mansalva&display=swap" rel="stylesheet">
+    <title>Orinoco</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <h1>Orinoco</h1>
+            </a>
+        </div>
+    </header>
+    <section class="productPage--section">
+        <h1 id="product-title">titre de caméra</h1>
+        <div class="product_presentation">
+            <img id="product-img" class="product-img" src="assets/img/logo.png">
+            <div class="product_presentation_infos">
+                <p class="product-name" id="product-name">Nom du produit</p>
+                <p class="product-description" id="product-description">Description du produit</p>
+                <div class="infos_price">
+                    <p class="product-price" id="product-price">Prix du produit</p>
+                    <p class="identify" id="identify">Prix du produit</p>
+                </div>
+
+                <form id="addProduct">
+                    <select id="options" class="options">
+                        <!--Remplis via Javascript-->
+                    </select>
+                    <label for="amout">Quantité</label>
+                    <input type="number" name="amout" class="amout-product" id="amoutProduct" value="1" min="1" max="10"
+                        placeholder="max: 10">
+                    <button type="submit" class="product-submit" id="sumbitProduct">Ajouter au panier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="../api/cameras.js"></script>
+    <script type="module" src="../api/productVu.js"></script>
+</body>
+
+</html>
