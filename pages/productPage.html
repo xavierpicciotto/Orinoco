@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./assets/scss/style.css">
-    <script async src="https://kit.fontawesome.com/78ed5cda51.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/78ed5cda51.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mansalva&display=swap" rel="stylesheet">
     <title>Orinoco</title>
@@ -18,12 +18,28 @@
             </a>
         </div>
     </header>
+    <nav>
+        <div class="drop-menu">
+            <p>Catégories</p>
+            <ul>
+                <li><a href="../index.html">Caméras vintages</a></li>
+                <li><a>Meubles en chêne</a></li>
+                <li><a>Ours en peluche</a></li>
+            </ul>
+        </div>
+        <div class="shop-cart">
+            <a href="panier.html">
+                <i class="fas fa-cart-arrow-down"></i>
+                <div class="nav-cart-count" id="nav-cart-count"></div>
+            </a>
+
+        </div>
+    </nav>
     <section class="productPage--section">
-        <h1 id="product-title">titre de caméra</h1>
+        <h2 id="product-title">titre de caméra</h2>
         <div class="product_presentation">
             <img id="product-img" class="product-img" src="assets/img/logo.png">
             <div class="product_presentation_infos">
-                <p class="product-name" id="product-name">Nom du produit</p>
                 <p class="product-description" id="product-description">Description du produit</p>
                 <div class="infos_price">
                     <p class="product-price" id="product-price">Prix du produit</p>
@@ -31,19 +47,22 @@
                 </div>
 
                 <form id="addProduct">
-                    <select id="options" class="options">
+                    <label for="options">Lentilles :</label>
+                    <select id="options" name="options" class="options">
                         <!--Remplis via Javascript-->
                     </select>
-                    <label for="amout">Quantité</label>
+                    <label for="amout">Quantité :</label>
                     <input type="number" name="amout" class="amout-product" id="amoutProduct" value="1" min="1" max="10"
-                        placeholder="max: 10">
-                    <button type="submit" class="product-submit" id="sumbitProduct">Ajouter au panier</button>
+                        placeholder="max:10">
+                    <button type="submit" class="submit-btn" id="addProductToCart">Ajouter au panier</button>
+                    <button type="button" class="submit-btn" id="directOrder">Commander</button>
                 </form>
             </div>
         </div>
     </section>
-    <script type="module" src="../api/cameras.js"></script>
-    <script type="module" src="../api/productVu.js"></script>
+    <script src="../api/cameras.js"></script>
+    <script src="../api/productVu.js"></script>
+    <script src="../api/panier.js"></script>
 </body>
 
 </html>
