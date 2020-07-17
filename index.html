@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="pages/assets/scss/style.css">
-    <script async src="https://kit.fontawesome.com/78ed5cda51.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/78ed5cda51.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mansalva&display=swap"
         rel="stylesheet">
@@ -22,31 +22,30 @@
 
     <nav>
         <div class="drop-menu">
-            Catégorie
-        </div>
-        <div class="drop-menu-items">
+            <p>Catégories</p>
             <ul>
-                <li><a href="index.html">caméras vintages</a></li>
-                <li><a>caméras vintages</a></li>
-                <li><a>caméras vintages</a></li>
+                <li><a href="index.html">Caméras vintages</a></li>
+                <li><a>Meubles en chêne</a></li>
+                <li><a>Ours en peluche</a></li>
             </ul>
         </div>
         <div class="shop-cart">
             <a href="pages/panier.html">
                 <i class="fas fa-cart-arrow-down"></i>
+                <div class="nav-cart-count" id="nav-cart-count"></div>
             </a>
-
         </div>
     </nav>
 
     <section class="mainPage--section">
-        <h2 id="title">Caméras vintage</h2>
+        <h2 id="title">- Caméras vintage -</h2>
         <div class="list" id="list">
             <!--images des produits ajouté en Javascript-->
         </div>
     </section>
-    <script type="module" src="api/cameras.js"></script>
+    <script src="api/cameras.js"></script>
     <script src="api/mainPage.js"></script>
+    <script src="api/panier.js"></script>
 </body>
 
 </html>
