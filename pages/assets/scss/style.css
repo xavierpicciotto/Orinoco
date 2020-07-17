@@ -6,9 +6,10 @@ body {
           flex-direction: column;
   background: url(../img/background.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
 }
 
 header {
@@ -19,6 +20,75 @@ header h1 {
   font-size: 4em;
   margin: 1%;
   font-family: 'Mansalva', cursive;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.637);
+  -webkit-box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
+          box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 2em;
+}
+
+nav .drop-menu {
+  color: white;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  border: 3px solid white;
+  cursor: pointer;
+}
+
+nav .drop-menu p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul {
+  display: none;
+  list-style: none;
+  border: 3px solid white;
+  line-height: 2;
+  padding: 3%;
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  left: 0px;
+  top: 15%;
+  background-color: rgba(0, 0, 0, 0.72);
+}
+
+nav ul li:hover {
+  color: wheat;
+}
+
+nav .shop-cart {
+  color: white;
+  margin: 5%;
+}
+
+nav .nav-cart-count {
+  float: right;
+  text-align: center;
+  width: 60px;
+  color: #f7406a;
+}
+
+.drop-menu:hover ul {
+  display: block;
 }
 
 img {
@@ -36,52 +106,16 @@ a {
   width: inherit;
 }
 
-nav {
-  width: 100%;
-  height: 50px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.404);
-  -webkit-box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
-          box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.753);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 2em;
-}
-
-nav .drop-menu {
-  color: white;
-  margin-left: 5%;
-  border: 1px solid white;
-  padding: 0.4%;
-  border-radius: 10px;
-}
-
-nav .drop-menu-items {
-  display: none;
-  color: white;
-  position: absolute;
-  top: 160px;
-  background-color: rgba(156, 151, 151, 0.404);
-}
-
-nav .shop-cart {
-  color: #94ffb0;
-  margin: 5%;
-}
-
-.drop-menu:hover .drop-menu-items {
-  display: block;
+@media only screen and (min-width: 1000px) {
+  header h1 {
+    font-size: 6em;
+    margin: 0;
+  }
 }
 
 .mainPage--section {
   text-align: center;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
 }
 
 .mainPage--section h2 {
@@ -125,84 +159,390 @@ nav .shop-cart {
 
 .list .labels {
   width: 95%;
-  background-color: rgba(0, 0, 0, 0.404);
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.637);
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
 }
 
 .list .labels p {
-  margin-top: 1%;
+  margin-top: 2%;
   margin-bottom: 2%;
   margin-left: 6%;
   margin-right: 6%;
 }
 
-.productPage--section h1 {
+@media only screen and (min-width: 530px) {
+  .list .labels {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .mainPage--section h2 {
+    font-size: 4.2em;
+  }
+  .list img {
+    width: 70%;
+  }
+  .list .labels {
+    width: 70%;
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.productPage--section {
   text-align: center;
-  font-size: 3.5em;
-  text-shadow: 3px 3px 3px #727272;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  word-wrap: break-word;
+  border-radius: 10px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
+}
+
+.productPage--section:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.productPage--section h2 {
+  padding-top: 5%;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2em;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
 }
 
 .productPage--section .product_presentation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.productPage--section .product_presentation_infos {
-  text-align: center;
-}
-
-.productPage--section img {
-  max-width: 75%;
-  -webkit-box-shadow: 3px 3px 3px gray;
-          box-shadow: 3px 3px 3px gray;
-}
-
-.productPage--section .product-name {
-  font-size: 2.2em;
-  border-bottom: 5px double white;
-}
-
-.productPage--section .product-description {
-  text-align: justify;
-  margin: 5%;
   font-size: 1.7em;
 }
 
-.productPage--section .infos_price {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  font-size: 3em;
-  border-top: 5px double white;
+.productPage--section .product_presentation_infos {
+  margin: 1%;
+  padding-bottom: 1%;
 }
 
-.formulaire {
+.productPage--section img {
+  max-width: 95%;
+  border-radius: 25px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
+          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.637);
+}
+
+.productPage--section .infos_price {
+  border-top: 1px solid white;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid white;
+}
+
+.productPage--section form {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.productPage--section form select {
+  cursor: pointer;
+  margin-bottom: 3%;
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  width: 90%;
+}
+
+.productPage--section form select:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.productPage--section form input {
+  cursor: pointer;
+  margin-bottom: 3%;
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  width: 90%;
+  text-align: center;
+}
+
+.productPage--section form input:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.productPage--section form button {
+  cursor: pointer;
+  margin-bottom: 3%;
+  font-size: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  width: 90%;
+}
+
+.productPage--section form button:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+@media only screen and (min-width: 1180px) {
+  .productPage--section h2 {
+    font-size: 4.2em;
+  }
+  .productPage--section img {
+    width: 65%;
+  }
+  .productPage--section .product_presentation {
+    font-size: 2.5em;
+  }
+  .productPage--section form {
+    margin: 1%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .productPage--section form select {
+    margin-left: 5px;
+    margin-right: auto;
+    margin: 0;
+    width: auto;
+  }
+  .productPage--section form input {
+    margin-left: 5px;
+    margin-right: auto;
+    margin: 0;
+    width: auto;
+  }
+  .productPage--section form button {
+    margin: auto;
+    font-size: 40px;
+    margin: 0;
+    width: auto;
+  }
+}
+
+.pannier-title {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+}
+
+.products-resume {
+  margin-bottom: 5%;
+  text-align: end;
+}
+
+.resume_box {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  margin-top: 5%;
+  cursor: pointer;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1em;
+  -webkit-box-shadow: 3px 3px 3px black;
+          box-shadow: 3px 3px 3px black;
+}
+
+.resume_box:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.resume_box p {
+  margin: auto;
+  font-size: 25px;
+  text-shadow: 3px 3px 3px black;
+}
+
+.resume_box img {
+  margin: 1%;
+  width: 45%;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+
+.resume_box .count {
+  font-size: 30px;
+  font-family: sans-serif;
+  color: #d1cdcd;
+}
+
+.resume_box .item-infos {
+  text-align: center;
+  width: 50%;
+}
+
+.remove-item {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  left: 60%;
+  width: 40%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1%;
+  border-radius: 10px;
+  font-size: 1.5em;
+  background-color: #ff2323;
+}
+
+.remove-item:hover {
+  background-color: #e41b1b;
+  -webkit-box-shadow: 3px 3px 3px black;
+          box-shadow: 3px 3px 3px black;
+}
+
+.total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  border-top: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.808);
+  -webkit-box-shadow: 3px 3px 3px black;
+          box-shadow: 3px 3px 3px black;
+}
+
+.total .total_title {
+  width: 50%;
+  margin: auto;
+  color: white;
+  font-size: 2.1em;
+  text-align: center;
+}
+
+.total .total_price {
+  color: white;
+  font-size: 2.1em;
+  width: 50%;
+  text-align: center;
+}
+
+.form_title {
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  margin: 5%;
+  border-bottom: 1px solid white;
+  font-family: 'Dancing Script', cursive;
+}
+
+.form_order {
+  margin: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 2em;
+}
+
+.form_order input {
+  width: 80%;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  font-size: 1.2em;
+  border: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  -webkit-box-shadow: 3px 3px 3px black;
+          box-shadow: 3px 3px 3px black;
+  text-shadow: 3px 3px 3px black;
+}
+
+.form_order input:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.form_order textarea {
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: black;
+  width: 80%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  margin-bottom: 5%;
+  -webkit-box-shadow: 3px 3px 3px black;
+          box-shadow: 3px 3px 3px black;
+  text-shadow: 3px 3px 3px black;
+}
+
+.form_order textarea:hover {
+  background-color: rgba(0, 0, 0, 0.52);
+}
+
+.form_order .form_order-submit {
+  cursor: pointer;
+  color: white;
+  background-color: rgba(57, 226, 57, 0.603);
+  font-size: 1.5em;
+  border-radius: 5px;
+  border-radius: 20px;
+  margin: auto;
+  -webkit-box-shadow: 3px 3px 3px black;
+          box-shadow: 3px 3px 3px black;
+  text-shadow: 3px 3px 3px black;
+}
+
+@media only screen and (min-width: 1180px) {
+  .pannier-title {
+    font-size: 4em;
+    font-family: 'Dancing Script', cursive;
+  }
+  .resume_box img {
+    width: 15%;
+  }
+  .resume_box .item-infos {
+    display: contents;
+  }
+  .remove-item {
+    position: absolute;
+    width: 20%;
+    left: 80%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
