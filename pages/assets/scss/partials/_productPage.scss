@@ -1,42 +1,97 @@
 .productPage--section {
-    h1 {
+    text-align: center;
+    @include theme;
+    word-wrap: break-word;
+    border-radius: 10px;
+    text-shadow: 3px 3px 3px $background-theme;
+
+    h2 {
+        padding-top: 5%;
+        font-family: sans-serif;
         text-align: center;
-        font-size: 3.5em;
-        text-shadow: 3px 3px 3px rgb(114, 114, 114);
+        font-size: 2em;
+        text-shadow: 3px 3px 3px $background-theme;
     }
+
     .product_presentation {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .product_presentation_infos {
-        text-align: center;
-
-    }
-
-    img {
-        max-width: 75%;
-        box-shadow: 3px 3px 3px gray;
-    }
-
-    .product-name {
-        font-size: 2.2em;
-        border-bottom: 5px double white ;
-    }
-
-    .product-description {
-        text-align: justify;
-        margin: 5%;
         font-size: 1.7em;
     }
 
-    .infos_price {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        font-size: 3em;
-        border-top:5px double white ;      
+    .product_presentation_infos {
+        margin: 1%;
+        padding-bottom: 1%;
     }
 
+    img {
+        max-width: 95%;
+        border-radius: 25px;
+        box-shadow: 3px 3px 3px $background-theme;
+    }
+
+    .infos_price {
+        border-top: 1px solid white;
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid white;
+    }
+
+    form {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        select {
+            @include product-page_form;
+        }
+
+        input {
+            @include product-page_form;
+            text-align: center;
+        }
+
+        button {
+            @include product-page_form;
+        }
+    }
+
+}
+@media only screen and (min-width: 1180px){
+    .productPage--section{
+        h2 {
+            font-size: 4.2em;
+        }
+        img {
+            width: 65%;
+        }
+        .product_presentation {
+            font-size: 2.5em;
+        }
+        form {
+            margin: 1%;
+            flex-direction: row;
+            justify-content: space-between;
+            select{
+                margin-left: 5px;
+                margin-right: auto;
+                margin: 0;
+                width: auto;
+            }
+            input{
+                margin-left: 5px;
+                margin-right: auto;
+                margin: 0;
+                width: auto;
+            }
+            button {
+                margin: auto;
+                font-size: 40px;
+                margin: 0;
+                width: auto;
+            }
+        }
+    }
 }
