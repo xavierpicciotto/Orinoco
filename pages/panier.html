@@ -38,7 +38,7 @@
     <section>
         <h2 class="pannier-title">Votre liste d'achat :</h2>
         <div class="products-resume" id="resume">
-            <!--Resumé des produits ajoutés-->
+            <!--elements créée par panier.js-->
         </div>
         <div class="total">
             <h3 class="total_title">Total :</h3>
@@ -48,20 +48,20 @@
         <h3 class="form_title">Commander</h3>
         <form class="form_order" id="form_order">
             Prénom :
-            <input type="text" name="first-name" placeholder="Prénom" id="first-name" pattern="[a-zA-z/ /-]+" required>            
+            <input type="text" name="firstName" placeholder="Prénom" id="firstName" pattern="[a-zA-z/ /-]+" required>            
             Nom :
-            <input type="text" name="last-name" placeholder="Nom" id="last-name" pattern="[a-zA-z/ /-]+" required>
+            <input type="text" name="lastName" placeholder="Nom" id="lastName" pattern="[a-zA-z/ /-]+" required>
             E-mail :
-            <input type="email" name="e-mail" placeholder="exemple@domaine.com" id="email"required>
+            <input type="email" name="email" placeholder="exemple@domaine.com" id="email"required>
             Adresse :
-            <textarea id="address" name="adress" rows="4" placeholder="adresse complette" id="adresse" required></textarea>
+            <textarea id="address" name="address" rows="4" placeholder="adresse complette" id="adresse" required></textarea>
             Ville :
-            <input type="text" name="town" id="town" placeholder="Nice" pattern="[a-zA-z/ /-]+"required>
+            <input type="text" name="city" id="city" placeholder="Nice" pattern="[a-zA-z/ /-]+"required>
             <button type="submit" class="form_order-submit" id="submitOrder">Passer commande</button>
         </form>
     </section>
+    <script src="../api/panierCount.js"></script>
     <script src="../api/panier.js"></script>
-    <script src="../api/panierVu.js"></script>
     <script src="../api/panierForm.js"></script>
     <script src="https://kit.fontawesome.com/78ed5cda51.js" crossorigin="anonymous"></script>
 </body>
