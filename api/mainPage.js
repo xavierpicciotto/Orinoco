@@ -1,11 +1,12 @@
 //recuperation du tableau des produits
 let product = localStorage.getItem('cameras')
 product = JSON.parse(product)
-
+let box = null
+const list = document.getElementById('list')
 //mise en page de la liste des produits
-for (let i = 0; i !== product.length; i++) {
+for (let i = 0; i < product.length; i++) {
     //creation d'une boite pour le produit
-    let box = document.createElement('div')
+    box = document.createElement('div')
     box.setAttribute('id',product[i].name)
     list.append(box)
     
