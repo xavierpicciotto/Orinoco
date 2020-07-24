@@ -1,9 +1,9 @@
 const formOrder = document.getElementById('form_order')
-const firstName = document.getElementById('first-name')
-const lastName = document.getElementById('last-name')
+const firstName = document.getElementById('firstName')
+const lastName = document.getElementById('lastName')
 const email = document.getElementById('email')
 const address = document.getElementById('address')
-const city = document.getElementById('town')
+const city = document.getElementById('city')
 const submitOrder = document.getElementById('submitOrder')
 
 //corrige les anomalies des champs de texte
@@ -18,55 +18,42 @@ function textRegulator(string) {
     return string
 }
 
-//creation du tableau de commande a partir de la liste d'achat
-function arrayIDproduct() {
-    let products = []
-    for (i = 0; i != orderList.length; i++) {
-        products.push(orderList[i].productID)
-    }
-    return products
-}
-
-//creation d'un id de commande
-function createID() {
-    let id = firstName.value + lastName.value + textRegulator(Date())
-    console.log(id)
-    return id
-}
-//creation de la commande complete avec les infos client + tableau des produits + l'id
-submitOrder.onclick = function (e) {
+//creation de la commande complete avec les infos client + tableau des produits
+formOrder.addEventListener('submit', function (e) {
     e.preventDefault()
-    let order = {
-        products: arrayIDproduct(),
-        contact: {
-            fistName: textRegulator(firstName.value),
-            lastName: textRegulator(lastName.value),
-            email: textRegulator(email.value),
-            address: textRegulator(address.value),
-            city: textRegulator(city.value)
-        },
-        order_id: createID(),
-
+    //récupère les infos et les formates
+    let contact = {
+        firstName: textRegulator(firstName.value),
+        lastName: textRegulator(lastName.value),
+        email: textRegulator(email.value),
+        address: textRegulator(address.value),
+        city: textRegulator(city.value)
     }
-    order = JSON.stringify(order)
+    let products = orderList.map(o => o.productID)
+
+    //met a zero le pannier et créer un résumé de la commande
+    let resumeOrder = {
+        contact,
+        orderList
+    }
+    updadeList("saveResumeOrder", resumeOrder)
+    /*
+    let resetOrderlist = []
+    updadeList("saveOrderList",resetOrderlist)*/
+
     //envoie de la commande au server
-    fetch('http://localhost:3000/api/cameras', {
-        method: "POST",
-        body: order,
+    let data = {
+        contact,
+        products
+    }
+    console.log(data)
+    const option = {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            response.json()
-                .then(console.log)
-                .catch(error => {
-                    console.error(error);
-                });
-        } else {
-            console.error('server response : ' + response.status);
-        }
-    }).catch(error => {
-        console.error(error);
-    });
-}
+        },
+        body: JSON.stringify(data),
+
+    }
+    fetch('http://localhost:3000/api/cameras/order', option)
+})
