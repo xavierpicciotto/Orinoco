@@ -1,0 +1,56 @@
+.orderConfirmation {
+    h2 {
+        color: $text-theme;
+        text-align: center;
+        font-size: 2em;
+        animation: animeTitle 3s linear 0s infinite alternate;
+    }
+    h3{
+        margin-left: 5%;
+        color: $text-theme;
+        font-size: 1.5em;
+        text-decoration: underline;
+    }
+    .resume_order{
+        background-color: #ffffffca;
+        padding: 1%;
+        margin-bottom: 5%;
+        .resume_products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .product-resume {
+                width: 20%;
+                margin: 5%;
+                text-align: center;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.472);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.815);
+                img {
+                    cursor: default;
+                }
+            }
+        }
+        .resume_price{
+            text-align: end;
+            margin-right: 10%;
+            font-size: 1.5em;
+            text-decoration: underline black;
+        }
+        .resume_contact {
+            margin: 2%;
+            font-size: 1.7em;
+            .resume_contact_title{
+                color: black;
+            }
+            p{
+                border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+            }
+        }
+    }
+}
+@keyframes animeTitle {
+    0%   {background-color: rgba(255, 0, 0, 0.74);}
+    25%  {background-color: rgba(68, 185, 0, 0.719);}
+    50%  {background-color: rgba(0, 0, 255, 0.678);}
+    100% {background-color: rgba(255, 0, 200, 0.781);}
+  }
