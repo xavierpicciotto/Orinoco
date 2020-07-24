@@ -42,7 +42,7 @@ totalOrder.textContent = `Total de : ${finalPrice} $`
 let box = document.createElement('div')
 box.setAttribute('class', 'client-resume')
 resumeContact.append(box)
-//remplissage du résumé
+//remplissage du résumé du client
 let firstName = document.createElement('p')
 firstName.textContent = `Nom : ${saveResumeOrder.contact.firstName}`
 
