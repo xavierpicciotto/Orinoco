@@ -1,15 +1,79 @@
-//affichage du nombre de produit(s) dans le panier
-//recuperation du panier
-if (localStorage.getItem('saveOrderList') != null) {
-    orderList = JSON.parse(localStorage.getItem('saveOrderList'))
-} else {
-    orderList = []
+const resumeOrder = document.getElementById('resume')
+let finalPrice = 0
+
+//mise en page de la liste d'achat
+for (i = 0; i < orderList.length; i++) {
+    //creation du block
+    let box = document.createElement('div')
+    box.setAttribute('class', 'resume_box')
+    box.setAttribute('id', i)
+    //affichage oui/non du bouton supprimer 
+    let enableRemove = false
+    box.onclick = function () {
+        if (enableRemove == false) {
+            enableRemove = true
+            removeItem.style.display = "block"
+        } else {
+            enableRemove = false
+            removeItem.style.display = "none"
+        }
+        //masque automatiquement le bouton au bout de 5s
+        setTimeout(function () {
+            removeItem.style.display = "none";
+            enableRemove = false;
+        }, 5000)
+    }
+    //mise en page des infos du produit choisi
+    resumeOrder.append(box)
+
+    const img = document.createElement('img')
+    img.setAttribute('src', orderList[i].img)
+
+    const infosBox = document.createElement('div')
+    infosBox.setAttribute('class', 'item-infos')
+
+    const name = document.createElement('p')
+    name.textContent = orderList[i].name + "."
+    name.setAttribute("class", "name")
+
+    const price = document.createElement('p')
+    price.textContent = orderList[i].price + "$"
+    price.setAttribute("class", "price")
+
+    const option = document.createElement('p')
+    option.textContent = orderList[i].option
+    option.setAttribute("class", "option")
+
+    const count = document.createElement('p')
+    count.textContent = "x" + orderList[i].amount
+    count.setAttribute("class", "count")
+
+    const removeItem = document.createElement('button')
+    removeItem.setAttribute('class', 'remove-item')
+    removeItem.setAttribute('type', 'button')
+    removeItem.textContent = "supprimer"
+
+    //action de suppression d'un produit choisi
+    removeItem.onclick = function () {
+        let removeChoice = box.getAttribute('id')
+        orderList.splice(removeChoice, 1)
+        updadeList("saveOrderList",orderList)
+        location.reload()
+    }
+    //mise en page des infos
+    infosBox.append(name, option, price, count)
+    box.append(img, infosBox, removeItem)
+
+    //calcule le total de la commande
+     finalPrice += orderList[i].amount * orderList[i].price
+    // affiche le total de la commande
+    const totalOrder = document.getElementById('total_price')
+    totalOrder.textContent = finalPrice + " $"
 }
-//calcule de la quantité de produit(s) dans le panier
-let cartCount = 0
-for (let i = 0; i != orderList.length; i++) {
-    let productCount = Number(orderList[i].amount)
-    cartCount += productCount
+
+//met à jour les listes sur le stockage local du navigateur
+function updadeList(saveList,list) {
+    let update = JSON.stringify(list)
+    localStorage.setItem(saveList, update)
+
 }
-//mise en page de la quantité de produit(s) du panier
-document.getElementById('nav-cart-count').textContent = cartCount
