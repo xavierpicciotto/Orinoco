@@ -13,6 +13,7 @@ header {
     text-align: center;
 
     h1 {
+        color: black;
         font-size: 4em;
         margin: 1%;
         font-family: 'Mansalva', cursive;
@@ -49,17 +50,22 @@ nav {
     }
 
     ul {
-        display: none;
+        opacity: 0;
+        height: 0px;
+        transition: height,opacity, 1s;
+        overflow: hidden;
         list-style: none;
         border: 3px solid rgb(255, 255, 255);
-        line-height: 2;
-        padding: 3%;
         border-radius: 10px;
         color: $text-theme;
+        line-height: 2.2;
         position: absolute;
         left: 0px;
         top: 15%;
         background-color: rgba(0, 0, 0, 0.72);
+        &:hover {
+            opacity: 1;
+        }
 
         li:hover {
             color: wheat;
@@ -82,7 +88,9 @@ nav {
 }
 
 .drop-menu:hover ul {
-    display: block;
+   height: auto;
+   opacity: 1;
+   padding: 1%;
 }
 
 img {
