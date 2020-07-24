@@ -43,13 +43,13 @@
                 <p class="product-description" id="product-description">Description du produit</p>
                 <div class="infos_price">
                     <p class="product-price" id="product-price">Prix du produit</p>
-                    <p class="identify" id="identify">Prix du produit</p>
+                    <p class="identify" id="identify">id du produit</p>
                 </div>
 
                 <form id="addProduct">
                     <label for="options">Lentilles :</label>
                     <select id="options" name="options" class="options">
-                        <!--Remplis via Javascript-->
+                        <!--elements créée par product.js-->
                     </select>
                     <label for="amout">Quantité :</label>
                     <input type="number" name="amout" class="amout-product" id="amoutProduct" value="1" min="1" max="10"
@@ -61,8 +61,8 @@
         </div>
     </section>
     <script src="../api/cameras.js"></script>
-    <script src="../api/productVu.js"></script>
-    <script src="../api/panier.js"></script>
+    <script src="../api/product.js"></script>
+    <script src="../api/panierCount.js"></script>
 </body>
 
 </html>
