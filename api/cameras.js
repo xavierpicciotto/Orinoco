@@ -1,10 +1,9 @@
 let camerasUrl = 'http://localhost:3000/api/cameras'
 if (window.fetch) {
-    //fetch mode
+    //fetch methode
     fetch(camerasUrl)
         .then((response) => {
             response.json().then((data) => {
-
                 console.log(data)
                 let test = JSON.stringify(data)
                 localStorage.setItem('cameras', test)
@@ -12,7 +11,7 @@ if (window.fetch) {
         }).catch((err) =>
             console.log(err))
 } else {
-    //XMLHttpRequest mode si fetch n'est pas supporté
+    //XMLHttpRequest si fetch n'est pas supporté
     let cameras = new XMLHttpRequest()
 
     cameras.onreadystatechange = function () {
