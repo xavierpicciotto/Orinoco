@@ -12,4 +12,4 @@ for (let i = 0; i != orderList.length; i++) {
     cartCount += productCount
 }
 //mise en page de la quantité de produit(s) du panier
-document.getElementById('nav-cart-count').textContent = cartCount
+document.getElementById('cartCount').textContent = cartCount
