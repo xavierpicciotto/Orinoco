@@ -11,10 +11,14 @@
         font-size: 1.5em;
         text-decoration: underline;
     }
+    .resume_id {
+        font-size: 1.5em;
+    }
     .resume_order{
         background-color: #ffffffca;
         padding: 1%;
         margin-bottom: 5%;
+        text-shadow: none;
         .resume_products {
             display: flex;
             justify-content: space-around;
