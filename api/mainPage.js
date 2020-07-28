@@ -3,6 +3,7 @@ let product = localStorage.getItem('cameras')
 product = JSON.parse(product)
 let box = null
 const list = document.getElementById('list')
+
 //mise en page de la liste des produits
 for (let i = 0; i < product.length; i++) {
     //creation d'une boite pour le produit
@@ -34,4 +35,15 @@ for (let i = 0; i < product.length; i++) {
     let labelPrice = document.createElement('p')
     labelPrice.textContent = `${product[i].price}$`
     labelsInfo.append(labelName,labelPrice)
+}
+
+//affiche le bouton d'acces à la page de résumer de commande
+const historiqueBtn = document.getElementById('historique')
+const saveResumeOrder = JSON.parse(localStorage.getItem("saveResumeOrder")) 
+console.log(saveResumeOrder)
+if(saveResumeOrder.orderId){
+    historiqueBtn.style.display = "block"
+    historiqueBtn.onclick = function(){
+     location.href = "pages/orderConfirmation.html"   
+    }
 }
