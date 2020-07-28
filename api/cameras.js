@@ -5,8 +5,8 @@ if (window.fetch) {
         .then((response) => {
             response.json().then((data) => {
                 console.log(data)
-                let test = JSON.stringify(data)
-                localStorage.setItem('cameras', test)
+                let save = JSON.stringify(data)
+                localStorage.setItem('cameras', save)
             })
         }).catch((err) =>
             console.log(err))
