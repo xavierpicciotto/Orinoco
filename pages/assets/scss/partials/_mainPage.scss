@@ -8,6 +8,28 @@
         margin-top: 5%;
         font-family: 'Dancing Script', cursive;
     }
+
+}
+
+.historique {
+    text-align: end;
+    display: none;
+
+    .historique_btn {
+        cursor: pointer;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.774);
+        margin-top: 1%;
+        margin-right: 1%;
+        font-size: 1.5em;
+        border-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        background-color: rgba(129, 172, 253, 0.705);
+
+        &:hover {
+            background-color: rgb(78, 136, 243);
+            border-color: cornflowerblue;
+        }
+    }
 }
 
 .list {
@@ -57,8 +79,24 @@
     }
 }
 
+@media only screen and (max-width: 425px) {
+    .mainPage--section{
+        h2 {
+          font-size: 2.5em;
+        }
+    }
+    .historique {
+        .historique_btn {
+            font-size: 1em;
+            margin-right: 3%;
+            margin-top: 3%;
+        }
+    }
+
+}
+
 @media only screen and (min-width: 1000px) {
-    
+
     .mainPage--section h2 {
         font-size: 4.2em;
     }
