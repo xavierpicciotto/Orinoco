@@ -18,10 +18,17 @@ function textRegulator(string) {
     return string
 }
 
+//empêche l'envoie si il n'y a pas de produits
+if (cartCount == 0) {
+    submitOrder.setAttribute("disabled", "disabled")
+    submitOrder.textContent = "Panier vide"
+    submitOrder.style.backgroundColor = "rgb(255 177 0 / 73%)"
+}
+
 //creation de la commande complete avec les infos client + tableau des produits
-formOrder.addEventListener('submit', function (e) {
+formOrder.addEventListener("submit", function(e){
     e.preventDefault()
-    //récupère les infos et les formates
+     //récupère les infos et les formates
     let contact = {
         firstName: textRegulator(firstName.value),
         lastName: textRegulator(lastName.value),
@@ -31,29 +38,28 @@ formOrder.addEventListener('submit', function (e) {
     }
     let products = orderList.map(o => o.productID)
 
-    //met a zero le pannier et créer un résumé de la commande
-    let resumeOrder = {
-        contact,
-        orderList
-    }
-    updadeList("saveResumeOrder", resumeOrder)
-    /*
-    let resetOrderlist = []
-    updadeList("saveOrderList",resetOrderlist)*/
-
     //envoie de la commande au server
     let data = {
         contact,
         products
     }
-    console.log(data)
     const option = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
-
     }
+
     fetch('http://localhost:3000/api/cameras/order', option)
+        .then(response => response.json()
+            .then(data => updadeList("saveResumeOrder", data)))
+
+    //remet a zero le pannier
+    let resetOrderlist = []
+    updadeList("saveOrderList", resetOrderlist)
+    
+    submitOrder.textContent = "commande effectuée"
+    setTimeout(function(){location.href = "orderConfirmation.html"},1500)  
 })
+
