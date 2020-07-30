@@ -11,10 +11,6 @@ function textRegulator(string) {
     //supprime les espaces en trop
     string = string.trim()
     string = string.replace(/[\s]{2,}/g, " ")
-    //supprime les caractères spéciaux à l'execption de l'Email
-    if (string != email.value) {
-        string = string.replace(/[^\w\s]/gi, '')
-    }
     return string
 }
 
