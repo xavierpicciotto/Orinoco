@@ -47,15 +47,15 @@
         <h3 class="form_title">Commander</h3>
         <form class="form_order" id="form_order">
             Prénom :
-            <input type="text" name="firstName" placeholder="Prénom" id="firstName" pattern="[a-zA-z/ /-]+" required>            
+            <input type="text" name="firstName" placeholder="Prénom" id="firstName" pattern="[a-zA-ZÀ-ÿ/ /]+" required>            
             Nom :
-            <input type="text" name="lastName" placeholder="Nom" id="lastName" pattern="[a-zA-z/ /-]+" required>
+            <input type="text" name="lastName" placeholder="Nom" id="lastName" pattern="[a-zA-ZÀ-ÿ/ /]+" required>
             E-mail :
             <input type="email" name="email" placeholder="exemple@domaine.com" id="email" required>
             Adresse :
-            <textarea id="address" name="address" rows="4" placeholder="adresse complette" required></textarea>
+            <textarea id="address" name="address" rows="4" placeholder="adresse complette" pattern="[a-zA-ZÀ-ÿ/ /-']+" required></textarea>
             Ville :
-            <input type="text" name="city" id="city" placeholder="Nice" pattern="[a-zA-z/ /-]+" required>
+            <input type="text" name="city" id="city" placeholder="Nice" pattern="[a-zA-ZÀ-ÿ/ /-']+" required>
             <button type="submit" class="form_order-submit" id="submitOrder">Passer commande</button>
         </form>
     </section>
