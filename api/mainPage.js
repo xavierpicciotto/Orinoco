@@ -40,8 +40,8 @@ for (let i = 0; i < product.length; i++) {
 //affiche le bouton d'acces à la page de résumer de commande
 const historiqueBtn = document.getElementById('historique')
 const saveResumeOrder = JSON.parse(localStorage.getItem("saveResumeOrder")) 
-console.log(saveResumeOrder)
-if(saveResumeOrder.orderId){
+
+if(saveResumeOrder != null && saveResumeOrder.orderId){
     historiqueBtn.style.display = "block"
     historiqueBtn.onclick = function(){
      location.href = "pages/orderConfirmation.html"   
