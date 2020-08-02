@@ -13,21 +13,18 @@
 
 .historique {
     text-align: end;
+    height: 0;
+    margin-top: 1%;
     display: none;
 
     .historique_btn {
         cursor: pointer;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.774);
-        margin-top: 1%;
-        margin-right: 1%;
-        font-size: 1.5em;
-        border-color: rgb(255, 255, 255);
-        border-radius: 10px;
-        background-color: rgba(129, 172, 253, 0.705);
+        margin-right: 2%;
+        font-size: 3em;
+        color: rgb(78, 136, 243);
 
         &:hover {
-            background-color: rgb(78, 136, 243);
-            border-color: cornflowerblue;
+            color: rgb(96, 143, 230);
         }
     }
 }
