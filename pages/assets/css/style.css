@@ -137,24 +137,20 @@ a {
 
 .historique {
   text-align: end;
+  height: 0;
+  margin-top: 1%;
   display: none;
 }
 
 .historique .historique_btn {
   cursor: pointer;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.774);
-          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.774);
-  margin-top: 1%;
-  margin-right: 1%;
-  font-size: 1.5em;
-  border-color: white;
-  border-radius: 10px;
-  background-color: rgba(129, 172, 253, 0.705);
+  margin-right: 2%;
+  font-size: 3em;
+  color: #4e88f3;
 }
 
 .historique .historique_btn:hover {
-  background-color: #4e88f3;
-  border-color: cornflowerblue;
+  color: #608fe6;
 }
 
 .list {
