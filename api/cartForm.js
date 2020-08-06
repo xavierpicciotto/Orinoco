@@ -12,7 +12,7 @@ function textRegulator(string) {
     string = string.trim()
     string = string.replace(/[\s]{2,}/g, " ")
     //suprime les caractères spéciaux de l'adresse sauf (- et ')
-    if (string == address.value){
+    if (string == address.value) {
         string = string.replace(/[^\w\s\'\-]/gi, '')
     }
     return string
@@ -25,10 +25,20 @@ if (cartCount == 0) {
     submitOrder.style.backgroundColor = "rgb(255 177 0 / 73%)"
 }
 
+//empeche l'envoie si l'adresse est anormalement longue
+address.addEventListener('input', function (event) {
+    if (address.value.length > 200) {
+        alert('adresse anormalement longue')
+        submitOrder.style.display = "none"
+    } else {
+        submitOrder.style.display = "block"
+    }
+})
+
 //creation de la commande complete avec les infos client + tableau des produits
-formOrder.addEventListener("submit", function(e){
+formOrder.addEventListener("submit", function (e) {
     e.preventDefault()
-     //récupère les infos et les formates
+    //récupère les infos et les formates
     let contact = {
         firstName: textRegulator(firstName.value),
         lastName: textRegulator(lastName.value),
@@ -58,8 +68,9 @@ formOrder.addEventListener("submit", function(e){
     //remet a zero le pannier
     let resetOrderlist = []
     updadeList("saveOrderList", resetOrderlist)
-    
-    submitOrder.textContent = "commande effectuée"
-    setTimeout(function(){location.href = "orderConfirmation.html"},1500)  
-})
 
+    submitOrder.textContent = "commande effectuée"
+    setTimeout(function () {
+        location.href = "orderConfirmation.html"
+    }, 1500)
+})
